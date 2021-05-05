@@ -14,12 +14,12 @@
     "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Oleh Filyak <oleh.filyak92@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
+    "url": "https://github.com/OlehFilyak/goit-js-hw-10-food-service"
   },
-  "homepage": "https://github.com/luxplanjay/webpack-starter-kit#readme",
+  "homepage": "https://OlehFilyak.github.io/goit-js-hw-10-food-service",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
