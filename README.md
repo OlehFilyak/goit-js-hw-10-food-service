@@ -1,82 +1,49 @@
-https://olehfilyak.github.io/goit-js-hw-10-food-service/
-
-# Webpack starter kit &middot; [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
+# parcel-project-template
 
 ## Зависимости
 
-На компьютере должена быть установлена LTS-версия
-[Node.js](https://nodejs.org/en/).
+На компьютере должена быть установлена LTS-версия [Node.js](https://nodejs.org/en/).
+
+## Перед началом работы
+
+Один раз на проект установить все зависимости.
+
+```shell
+npm ci
+```
 
 ### Разработка
 
-Для быстрого старта необходимо склонировать репозиторий.
+Запустить режим разработки.
 
 ```shell
-git clone https://github.com/luxplanjay/webpack-starter-kit.git
+npm run dev
 ```
 
-Переименовать папку сборки именем вашего проекта.
+Во вкладке браузера перейти по адресу [http://localhost:1234](http://localhost:1234).
 
-```shell
-mv webpack-starter-kit имя_проекта
-```
+### Деплой
 
-Затем перейти в папку проекта.
-
-```shell
-cd имя_проекта
-```
-
-Находясь в папке проекта удалить папку `.git` связанную с репозиторием сборки
-выполнив следующую команду.
-
-```shell
-npx rimraf .git
-```
-
-Установить все зависимости.
-
-```shell
-npm install
-```
-
-И запустить режим разработки.
-
-```shell
-npm start
-```
-
-Во вкладке браузера перейти по адресу
-[http://localhost:4040](http://localhost:4040).
-
-### Сборка в продакшен
-
-Для того чтобы создать оптимизированные файлы для хостинга, необходимо выполнить
-следующую команду. В корне проекта появится папка `build` со всеми
-оптимизированными ресурсами.
-
-```shell
-npm run build
-```
-
-### Deploying/Publishing
-
-Сборка может автоматически деплоить билд на GitHub Pages удаленного (remote)
-репозитория. Для этого необходимо в файле `package.json` отредактировать поле
-`homepage`, заменив имя пользователя и репозитория на свои.
+Сборка будет автоматически собирать и деплоить продакшен версию проекта на GitHub Pages, в ветку
+`gh-pages`, каждый раз когда обновляется ветка `main`. Например, после прямого пуша или принятого
+пул-реквеста. Для этого необходимо в файле `package.json` отредактировать поле `homepage` и скрипт
+`build`, заменив `имя_пользователя` и `имя_репозитория` на свои.
 
 ```json
-"homepage": "https://имя_пользователя.github.io/имя_репозитория"
+"homepage": "https://имя_пользователя.github.io/имя_репозитория",
+"scripts": {
+  "build": "parcel build src/*.html --public-url /имя_репозитория/"
+},
 ```
 
-После чего в терминале выполнить следующую команду.
+Через какое-то время живую страницу можно будет посмотреть по адресу указанному в отредактированном
+свойстве `homepage`, например
+[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
 
-```shell
-npm run deploy
-```
+## Файлы и папки
 
-Если нет ошибок в коде и свойство `homepage` указано верно, запустится сборка
-проекта в продакшен, после чего содержимое папки `build` будет помещено в ветку
-`gh-pages` на удаленном (remote) репозитории. Через какое-то время живую
-страницу можно будет посмотреть по адресу указанному в отредактированном
-свойстве `homepage`.
+- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
+  `src/sass/main.scss`
+- Изображения добавляйте в папку `src/images`, заранее оптимизировав их. Сборщик просто копирует
+  используемые изображения чтобы не нагружать систему оптимизацией картинок, так как на слабых
+  компьютерах это может занять прилично времени.
